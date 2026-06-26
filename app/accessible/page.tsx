@@ -13,8 +13,6 @@ export const metadata = {
 export default function AccessiblePage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <AccessibleHeader />
-
       <main className="flex-1 max-w-7xl mx-auto px-4 py-12 w-full">
         <h1 className="text-4xl font-bold mb-6 focus:outline-none focus:ring-2 focus:ring-blue-500">
           Fully Accessible Page
@@ -49,6 +47,10 @@ export default function AccessiblePage() {
         </section>
 
         <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-4">Header</h2>
+          <div className="relative h-100 w-100 max-w-2xl">
+            <AccessibleHeader />
+          </div>
           <h2 className="text-2xl font-bold mb-4">Featured Image</h2>
           <div className="relative h-100 w-100 max-w-2xl">
             <Image

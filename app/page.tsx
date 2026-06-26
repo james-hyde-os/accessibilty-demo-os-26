@@ -3,11 +3,6 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="bg-blue-600 text-white shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold">Accessibility Demo Site</h1>
-        </div>
-      </header>
 
       <main className="flex-1 max-w-7xl mx-auto px-4 py-12 w-full">
         <section className="mb-12">
@@ -21,7 +16,7 @@ export default function Home() {
             Click on either link below to compare the two approaches.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <Link
               href="/accessible"
               className="p-6 bg-green-50 border-2 border-green-500 rounded-lg hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
@@ -61,6 +56,24 @@ export default function Home() {
                 <li>Low color contrast</li>
                 <li>Limited keyboard support</li>
                 <li>Missing ARIA</li>
+              </ul>
+            </Link>
+
+            <Link
+              href="/quiz"
+              className="p-6 bg-yellow-50 border-2 border-yellow-500 rounded-lg hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
+            >
+              <h3 className="text-xl font-bold mb-2 text-yellow-700">
+                ? Accessibility Quiz
+              </h3>
+              <p className="text-gray-700 mb-4">
+                Test your ability to spot accessibility issues from the
+                inaccessible example page.
+              </p>
+              <ul className="list-disc list-inside text-gray-700 space-y-1">
+                <li>Review the page examples</li>
+                <li>Enter likely problems</li>
+                <li>Submit for instant feedback</li>
               </ul>
             </Link>
           </div>
@@ -162,7 +175,11 @@ export default function Home() {
               GOV UK Accessibility Tools
             </a>
           </li>
-
+          <li>
+            <a href="https://www.w3.org/WAI/test-evaluate/tools/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+              Jest Axe
+            </a>
+          </li>
         </ul>
       </section>
       </main>
