@@ -24,12 +24,35 @@ export default function ToolsPage() {
       ],
     },
     {
+      id: "accessibility-inspector",
+      title: "Accessibility Inspector / Document Viewer",
+      explanation:
+        "The Accessibility Inspector is a browser developer tool that shows the accessibility tree—how assistive technologies like screen readers perceive your page. It displays the accessible name, role, and state of elements, helping you understand how your content is exposed to users with disabilities.",
+      documentation: [
+        { title: "Firefox Accessibility Inspector", href: "https://developer.mozilla.org/en-US/docs/Tools/Accessibility_inspector" },
+        { title: "Chrome DevTools Accessibility Features", href: "https://developer.chrome.com/docs/devtools/accessibility/reference/" },
+        { title: "Safari Web Inspector Accessibility", href: "https://developer.apple.com/documentation/webdriver/investigating-web-automation-failures#Inspect-web-content-accessibility" }
+      ],
+      instructions: [
+        "Open Developer Tools (F12 or Right-click > Inspect)",
+        "Firefox: Click the 'Accessibility' tab in the DevTools panel",
+        "Chrome: In the Elements panel, look for the 'Accessibility' subtab on the right sidebar (you may need to click >> to find it)",
+        "Safari: Open Web Inspector and navigate to the Accessibility tab",
+        "Select elements on the page using the element picker tool",
+        "View the Accessibility Tree to see how the element appears to assistive technologies",
+        "Check the 'Name' field to see the accessible name of the element",
+        "Verify the 'Role' is correct (button, link, heading, etc.)",
+        "Review other properties like 'State' and 'ARIA Attributes'",
+        "Use this to identify missing labels, incorrect roles, or hidden content",
+      ],
+    },
+    {
       id: "axe",
       title: "Axe DevTools",
       explanation:
         "Axe DevTools is a powerful browser extension by Deque that automatically scans your webpage for accessibility violations. It identifies issues related to WCAG 2.2 standards and provides detailed reports with severity levels and suggestions for fixes.",
       documentation: [
-        { title: "Axe DevTools Official Site", href: "https://www.deque.com/axe/devtools/" }
+        { title: "Axe DevTools Official Site", href: "https://github.com/dequelabs/axe-core#axe-core" }
       ],
       instructions: [
         "Install the Axe DevTools extension from your browser's extension store",
@@ -76,7 +99,7 @@ export default function ToolsPage() {
       explanation:
         "Headings Map is a browser extension that visualizes the heading hierarchy of a webpage. It helps you verify that headings follow a logical structure (h1 → h2 → h3) without skipping levels, which is important for screen reader users and document outline.",
       documentation: [
-        { title: "Headings Map Extension", href: "https://www.headingsmap.com/" }
+        { title: "Headings Map Extension", href: "https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi" }
       ],
       instructions: [
         "Install the Headings Map extension from your browser's extension store",
@@ -153,12 +176,6 @@ export default function ToolsPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="bg-blue-600 text-white shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold">Accessibility Testing Tools</h1>
-        </div>
-      </header>
-
       <main className="flex-1 max-w-7xl mx-auto px-4 py-12 w-full">
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-4">Tools for Testing Accessibility</h2>

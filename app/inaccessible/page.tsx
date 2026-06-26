@@ -12,7 +12,6 @@ export const metadata = {
 export default function InaccessiblePage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <InaccessibleHeader />
 
       <main className="flex-1 max-w-7xl mx-auto px-4 py-12 w-full">
         <div className="text-4xl font-bold mb-6">Inaccessible Page</div>
@@ -45,6 +44,12 @@ export default function InaccessiblePage() {
           </ul>
         </section>
 
+        <section className="mb-12">
+          <div className="text-2xl font-bold mb-4">Header & footer</div>
+          <div className="relative max-w-2xl">
+            <InaccessibleHeader />
+          </div>
+        </section>
         <section className="mb-12">
           <div className="text-2xl font-bold mb-4">Featured Image</div>
           <div className="relative h-100 w-100 max-w-2xl">
