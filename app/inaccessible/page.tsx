@@ -60,6 +60,20 @@ export default function InaccessiblePage() {
               className="object-cover rounded-lg"
             />
           </div>
+          <details className="mt-4 p-4 bg-red-50 border border-red-200 rounded">
+            <summary className="cursor-pointer font-semibold text-red-900">Why this is inaccessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Issue:</strong> Meaningful image has empty alt text</p>
+              <p className="mb-3">Important images need descriptive alt text so screen readers can convey the image's content and purpose to users. Empty alt text is only for decorative images.</p>
+              <p className="mb-2"><strong>Inaccessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`<Image
+  src="/images/business-logo.avif"
+  alt=""
+  fill
+/>`}</pre>
+              <p className="text-xs text-gray-600 mt-2">Screen reader: (skips image entirely - user misses content)</p>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -91,6 +105,27 @@ export default function InaccessiblePage() {
               Submit
             </button>
           </form>
+          <details className="mt-4 p-4 bg-red-50 border border-red-200 rounded">
+            <summary className="cursor-pointer font-semibold text-red-900">Why this is inaccessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Issues:</strong></p>
+              <ul className="list-disc list-inside space-y-1 mb-3">
+                <li>Error message is visual only - no programmatic association with input</li>
+                <li>No aria-describedby linking the error to the input</li>
+                <li>No role="status" to announce errors to screen readers</li>
+                <li>Input uses div instead of label element</li>
+              </ul>
+              <p className="mb-2"><strong>Inaccessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`<div className="text-sm font-medium mb-1">Email</div>
+<input
+  type="email"
+  placeholder="Enter email"
+/>
+<div className="text-red-600 text-sm mt-1">
+  Invalid email format
+</div>`}</pre>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -109,6 +144,18 @@ export default function InaccessiblePage() {
           <p className="text-sm text-gray-600 mt-2">
             These buttons are less than 44x44px - difficult for mobile/motor issues
           </p>
+          <details className="mt-4 p-4 bg-red-50 border border-red-200 rounded">
+            <summary className="cursor-pointer font-semibold text-red-900">Why this is inaccessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Issue:</strong> Touch targets are too small (less than 44x44px)</p>
+              <p className="mb-3">Users with motor impairments, tremors, or using touch devices on mobile struggle to accurately tap small buttons. WCAG 2.5.5 recommends minimum 44x44px.</p>
+              <p className="mb-2"><strong>Inaccessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`<button className="px-2 py-1 ... text-xs">
+  Tiny
+</button>`}</pre>
+              <p className="text-xs text-gray-600 mt-2 mb-2">Result: ~32x20px (too small)</p>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -127,6 +174,20 @@ export default function InaccessiblePage() {
           <p className="text-sm text-gray-600">
             Screen reader users hear &quot;click here&quot; twice with no context
           </p>
+          <details className="mt-4 p-4 bg-red-50 border border-red-200 rounded">
+            <summary className="cursor-pointer font-semibold text-red-900">Why this is inaccessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Issue:</strong> Generic link text doesn't describe the link's purpose</p>
+              <p className="mb-3">Screen reader users often navigate by link text. "Click here" provides no context about where the link goes or what action it performs.</p>
+              <p className="mb-2"><strong>Inaccessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`For more information,
+<a href="#">click here</a>
+We also have
+<a href="#">click here</a>
+for services.`}</pre>
+              <p className="text-xs text-gray-600 mt-2">Screen reader reads: "click here, click here" (confusing)</p>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -150,6 +211,22 @@ export default function InaccessiblePage() {
               Placeholder disappears when you type - no persistent label
             </p>
           </form>
+          <details className="mt-4 p-4 bg-red-50 border border-red-200 rounded">
+            <summary className="cursor-pointer font-semibold text-red-900">Why this is inaccessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Issues:</strong></p>
+              <ul className="list-disc list-inside space-y-1 mb-3">
+                <li>Placeholder disappears when user starts typing</li>
+                <li>No associated label element for screen readers</li>
+                <li>Users with cognitive disabilities lose context</li>
+              </ul>
+              <p className="mb-2"><strong>Inaccessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`<input
+  type="text"
+  placeholder="Full Name"
+/>`}</pre>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -160,6 +237,17 @@ export default function InaccessiblePage() {
             <button className="text-2xl hover:opacity-70">🛒</button>
             <p className="text-sm text-gray-600">No accessible names - screen readers say &quot;button&quot;</p>
           </div>
+          <details className="mt-4 p-4 bg-red-50 border border-red-200 rounded">
+            <summary className="cursor-pointer font-semibold text-red-900">Why this is inaccessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Issue:</strong> Icon-only buttons lack accessible names</p>
+              <p className="mb-3">Screen readers can't determine what these buttons do. Users hear "button" with no context.</p>
+              <p className="mb-2"><strong>Inaccessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`<button className="text-2xl">🔍</button>
+<button className="text-2xl">❤️</button>
+<button className="text-2xl">🛒</button>`}</pre>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -175,6 +263,17 @@ export default function InaccessiblePage() {
           <p className="text-sm text-gray-600">
             Color-blind users can&apos;t distinguish meaning - no text alternative
           </p>
+          <details className="mt-4 p-4 bg-red-50 border border-red-200 rounded">
+            <summary className="cursor-pointer font-semibold text-red-900">Why this is inaccessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Issue:</strong> Information conveyed by color alone</p>
+              <p className="mb-3">Approximately 8% of men and 0.5% of women have color blindness. Users with low vision also struggle. Meaning must be conveyed through multiple channels: color + text + symbols.</p>
+              <p className="mb-2"><strong>Inaccessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`<div className="bg-green-500">✓</div>
+<div className="bg-red-500">✗</div>`}</pre>
+              <p className="text-xs text-gray-600 mt-2">Colorblind user sees: two boxes, but can't distinguish meaning</p>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -190,6 +289,20 @@ export default function InaccessiblePage() {
           <p className="text-sm text-gray-600">
             Decorative images should have alt=&quot;&quot; but this has unnecessary description
           </p>
+          <details className="mt-4 p-4 bg-red-50 border border-red-200 rounded">
+            <summary className="cursor-pointer font-semibold text-red-900">Why this is inaccessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Issue:</strong> Decorative images have descriptive alt text</p>
+              <p className="mb-3">Purely decorative images should have empty alt text (<code className="bg-gray-200 px-1 rounded">alt=""</code>) so screen readers skip them. Descriptive alt text for decorative images creates noise and confusion.</p>
+              <p className="mb-2"><strong>Inaccessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`<Image
+  src="/images/business-logo.avif"
+  alt="This is just decoration but has..."
+  fill
+/>`}</pre>
+              <p className="text-xs text-gray-600 mt-2">Screen reader announces lengthy description for a decorative element</p>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -209,6 +322,19 @@ export default function InaccessiblePage() {
           <p className="text-sm text-gray-600 mt-2">
             Animation ignores prefers-reduced-motion - may cause vestibular issues
           </p>
+          <details className="mt-4 p-4 bg-red-50 border border-red-200 rounded">
+            <summary className="cursor-pointer font-semibold text-red-900">Why this is inaccessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Issue:</strong> Animations don't respect <code className="bg-gray-200 px-1 rounded">prefers-reduced-motion</code></p>
+              <p className="mb-3">Users with vestibular disorders, photosensitivity, or motion sickness may experience discomfort. Users can set OS preferences to reduce motion, which developers must respect.</p>
+              <p className="mb-2"><strong>Inaccessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+// No @media (prefers-reduced-motion) check`}</pre>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -236,6 +362,20 @@ export default function InaccessiblePage() {
               Tab order: Last Name → First Name (not left to right)
             </p>
           </form>
+          <details className="mt-4 p-4 bg-red-50 border border-red-200 rounded">
+            <summary className="cursor-pointer font-semibold text-red-900">Why this is inaccessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Issue:</strong> Tab order doesn't follow visual/logical order</p>
+              <p className="mb-3">Users navigating by keyboard follow the tab order. If it doesn't match visual layout, it's confusing and breaks logical flow.</p>
+              <p className="mb-2"><strong>Inaccessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`<!-- Visually left to right -->
+<input tabIndex={3} /> <!-- First visually -->
+<input tabIndex={1} /> <!-- Second visually -->
+
+<!-- But tab order: 1st input (tabIndex 1) -> 2nd input (tabIndex 3) -->`}</pre>
+              <p className="text-xs text-gray-600 mt-2">Keyboard users experience: focus jumps to Last Name first (confusing)</p>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -255,6 +395,26 @@ export default function InaccessiblePage() {
           <p className="text-sm text-gray-600 mt-2">
             No `&lt;th&gt;` headers - screen readers read cells without context
           </p>
+          <details className="mt-4 p-4 bg-red-50 border border-red-200 rounded">
+            <summary className="cursor-pointer font-semibold text-red-900">Why this is inaccessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Issues:</strong></p>
+              <ul className="list-disc list-inside space-y-1 mb-3">
+                <li>Uses only &lt;td&gt; elements - no header semantics</li>
+                <li>No &lt;thead&gt; to distinguish headers from data</li>
+                <li>Screen readers can't announce column context</li>
+              </ul>
+              <p className="mb-2"><strong>Inaccessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`<table>
+  <tr>
+    <td>Product A</td>
+    <td>$29.99</td>
+    <td>In Stock</td>
+  </tr>
+</table>`}</pre>
+              <p className="text-xs text-gray-600 mt-2">Screen reader reads: "Product A, $29.99, In Stock" (no labels)</p>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -265,6 +425,20 @@ export default function InaccessiblePage() {
           <p className="text-sm text-gray-600">
             Screen readers use wrong language/pronunciation for content
           </p>
+          <details className="mt-4 p-4 bg-red-50 border border-red-200 rounded">
+            <summary className="cursor-pointer font-semibold text-red-900">Why this is inaccessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Issue:</strong> Missing language declaration on html element</p>
+              <p className="mb-3">Screen readers use the language attribute to apply correct pronunciation rules. Without it, they guess or use the user's default language, resulting in incorrect pronunciation and unintelligible text-to-speech.</p>
+              <p className="mb-2"><strong>Inaccessible Code (Current):</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`<!DOCTYPE html>
+<html>
+  <head>...</head>
+  <body>...</body>
+</html>`}</pre>
+              <p className="text-xs text-gray-600 mt-1">Screen reader: Uses wrong pronunciation (e.g., English text read as Spanish)</p>
+            </div>
+          </details>
         </section>
       </main>
 

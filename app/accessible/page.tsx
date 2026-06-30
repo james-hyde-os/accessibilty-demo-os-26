@@ -47,10 +47,6 @@ export default function AccessiblePage() {
         </section>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-4">Header</h2>
-          <div className="relative h-100 w-100 max-w-2xl">
-            <AccessibleHeader />
-          </div>
           <h2 className="text-2xl font-bold mb-4">Featured Image</h2>
           <div className="relative h-100 w-100 max-w-2xl">
             <Image
@@ -65,6 +61,26 @@ export default function AccessiblePage() {
             Figure: A blue placeholder image with white text representing proper
             image accessibility.
           </p>
+          <details className="mt-4 p-4 bg-green-50 border border-green-200 rounded">
+            <summary className="cursor-pointer font-semibold text-green-900">Why this is accessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Best practices:</strong></p>
+              <ul className="list-disc list-inside space-y-1 mb-3">
+                <li>Descriptive alt text conveys the image's meaning and purpose</li>
+                <li>Figure caption provides additional context</li>
+                <li>Users understand what the image represents</li>
+              </ul>
+              <p className="mb-2"><strong>Accessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`<Image
+  src="/images/business-logo.avif"
+  alt="Business logo demonstrating accessible..."
+  fill
+  priority
+/>
+<p>Figure: A blue placeholder image...</p>`}</pre>
+              <p className="text-xs text-gray-600 mt-2">Screen reader announces: descriptive alt text helps users understand image content</p>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -123,6 +139,30 @@ export default function AccessiblePage() {
           <p className="text-sm text-gray-600 mt-4">
             ✓ Clear validation messages with role=&quot;status&quot; for screen readers
           </p>
+          <details className="mt-4 p-4 bg-green-50 border border-green-200 rounded">
+            <summary className="cursor-pointer font-semibold text-green-900">Why this is accessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Best practices:</strong></p>
+              <ul className="list-disc list-inside space-y-1 mb-3">
+                <li><code className="bg-gray-200 px-1 rounded">htmlFor</code> connects label to input</li>
+                <li><code className="bg-gray-200 px-1 rounded">aria-describedby</code> links error message to input</li>
+                <li><code className="bg-gray-200 px-1 rounded">role="status"</code> announces changes to screen readers</li>
+                <li><code className="bg-gray-200 px-1 rounded">aria-label="required"</code> provides context for asterisk</li>
+              </ul>
+              <p className="mb-2"><strong>Accessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`<label htmlFor="email-acc">
+  Email <span aria-label="required">*</span>
+</label>
+<input
+  id="email-acc"
+  type="email"
+  aria-describedby="email-error"
+/>
+<div id="email-error" role="status">
+  ✓ Valid email format
+</div>`}</pre>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -141,6 +181,18 @@ export default function AccessiblePage() {
           <p className="text-sm text-gray-600 mt-2">
             ✓ All buttons at least 44x44px - meets WCAG 2.5.5 standard
           </p>
+          <details className="mt-4 p-4 bg-green-50 border border-green-200 rounded">
+            <summary className="cursor-pointer font-semibold text-green-900">Why this is accessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Best practice:</strong> Touch targets should be at least 44x44 pixels</p>
+              <p className="mb-3">This accommodates users with motor impairments, tremors, and those on touch devices. Larger targets are easier to hit accurately.</p>
+              <p className="mb-2"><strong>Accessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`<button className="px-6 py-3 ...">
+  Standard
+</button>`}</pre>
+              <p className="text-xs text-gray-600 mt-2">Result: 48x44px (meets minimum standard)</p>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -165,6 +217,23 @@ export default function AccessiblePage() {
           <p className="text-sm text-gray-600">
             ✓ Links describe their purpose - screen readers understand the context
           </p>
+          <details className="mt-4 p-4 bg-green-50 border border-green-200 rounded">
+            <summary className="cursor-pointer font-semibold text-green-900">Why this is accessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Best practice:</strong> Link text should describe the link's purpose</p>
+              <p className="mb-3">Screen reader users often navigate links without surrounding context. Descriptive link text helps them understand where the link leads.</p>
+              <p className="mb-2"><strong>Accessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`For more information,
+<a href="#">
+  read our product details
+</a>
+We also offer
+<a href="#">
+  service information
+</a>`}</pre>
+              <p className="text-xs text-gray-600 mt-2">Screen reader announces: "read our product details, service information" (clear purpose)</p>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -194,6 +263,23 @@ export default function AccessiblePage() {
               ✓ Permanent labels remain visible - accessible even while typing
             </p>
           </form>
+          <details className="mt-4 p-4 bg-green-50 border border-green-200 rounded">
+            <summary className="cursor-pointer font-semibold text-green-900">Why this is accessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Best practices:</strong></p>
+              <ul className="list-disc list-inside space-y-1 mb-3">
+                <li>Labels use <code className="bg-gray-200 px-1 rounded">htmlFor</code> to associate with inputs</li>
+                <li>Labels remain visible (not replaced by placeholder)</li>
+                <li>Users always see what field they're filling</li>
+                <li>Screen readers announce the field purpose</li>
+              </ul>
+              <p className="mb-2"><strong>Accessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`<label htmlFor="name-field">
+  Full Name
+</label>
+<input id="name-field" type="text" />`}</pre>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -221,6 +307,24 @@ export default function AccessiblePage() {
           <p className="text-sm text-gray-600">
             ✓ aria-label provides accessible names - screen readers announce purpose
           </p>
+          <details className="mt-4 p-4 bg-green-50 border border-green-200 rounded">
+            <summary className="cursor-pointer font-semibold text-green-900">Why this is accessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Best practice:</strong> Icon-only buttons need <code className="bg-gray-200 px-1 rounded">aria-label</code></p>
+              <p className="mb-3"><code className="bg-gray-200 px-1 rounded">aria-label</code> provides an accessible name that screen readers announce, helping users understand what the button does.</p>
+              <p className="mb-2"><strong>Accessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`<button aria-label="Search">
+  🔍
+</button>
+<button aria-label="Add to favorites">
+  ❤️
+</button>
+<button aria-label="Add to shopping cart">
+  🛒
+</button>`}</pre>
+              <p className="text-xs text-gray-600 mt-2">Screen reader announces: "Search button, Add to favorites button, Add to shopping cart button"</p>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -242,6 +346,21 @@ export default function AccessiblePage() {
           <p className="text-sm text-gray-600">
             ✓ Color combined with symbols and text - conveyed multiple ways
           </p>
+          <details className="mt-4 p-4 bg-green-50 border border-green-200 rounded">
+            <summary className="cursor-pointer font-semibold text-green-900">Why this is accessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Best practice:</strong> Information conveyed through multiple channels</p>
+              <p className="mb-3">Using color + symbols + text ensures users with color blindness, low vision, and other disabilities can understand the meaning.</p>
+              <p className="mb-2"><strong>Accessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`<div className="bg-green-700">
+  ✓ <span>Accept</span>
+</div>
+<div className="bg-red-500">
+  ✗ <span>Error</span>
+</div>`}</pre>
+              <p className="text-xs text-gray-600 mt-2">Accessible to all: green color, checkmark symbol, AND "Accept" text</p>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -260,6 +379,21 @@ export default function AccessiblePage() {
           <p className="text-sm text-gray-600">
             ✓ Decorative image uses alt=&quot;&quot; - screen readers skip it properly
           </p>
+          <details className="mt-4 p-4 bg-green-50 border border-green-200 rounded">
+            <summary className="cursor-pointer font-semibold text-green-900">Why this is accessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Best practice:</strong> Decorative images use empty alt text</p>
+              <p className="mb-3">Empty alt text tells screen readers to skip the image, preventing unnecessary announcements. This is appropriate when the image's content is already described elsewhere or purely decorative.</p>
+              <p className="mb-2"><strong>Accessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`<Image
+  src="/images/business-logo.avif"
+  alt=""
+  fill
+/>
+<span>Company Name</span>`}</pre>
+              <p className="text-xs text-gray-600 mt-2">Screen reader: skips image, announces "Company Name" (no confusion)</p>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -285,6 +419,25 @@ export default function AccessiblePage() {
           <p className="text-sm text-gray-600 mt-4">
             ✓ CSS includes @media (prefers-reduced-motion) - respects user settings
           </p>
+          <details className="mt-4 p-4 bg-green-50 border border-green-200 rounded">
+            <summary className="cursor-pointer font-semibold text-green-900">Why this is accessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Best practice:</strong> Respect <code className="bg-gray-200 px-1 rounded">prefers-reduced-motion</code> media query</p>
+              <p className="mb-3">Users with vestibular disorders, photosensitivity, or motion sickness can enable OS settings to reduce motion. Developers must respect this preference.</p>
+              <p className="mb-2"><strong>Accessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`@keyframes slideRight {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animation-class {
+    animation: none !important;
+  }
+}`}</pre>
+              <p className="text-xs text-gray-600 mt-2">Users with motion preference stop seeing the animation automatically</p>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -316,6 +469,20 @@ export default function AccessiblePage() {
               ✓ Tab order follows visual/logical order: First Name → Last Name
             </p>
           </form>
+          <details className="mt-4 p-4 bg-green-50 border border-green-200 rounded">
+            <summary className="cursor-pointer font-semibold text-green-900">Why this is accessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Best practice:</strong> Tab order should follow visual/logical order</p>
+              <p className="mb-3">Keyboard users navigate in tab order. When it matches visual layout and reading order, navigation is intuitive and predictable.</p>
+              <p className="mb-2"><strong>Accessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`<!-- Visually left to right -->
+<input id="fname" /> <!-- No tabIndex needed -->
+<input id="lname" /> <!-- Natural DOM order -->
+
+<!-- Tab order follows DOM: First Name -> Last Name -->`}</pre>
+              <p className="text-xs text-gray-600 mt-2">Best practice: Don't use tabIndex unless absolutely necessary. Keep DOM order logical instead.</p>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -360,6 +527,36 @@ export default function AccessiblePage() {
             ✓ Uses `&lt;thead&gt;`, `&lt;th&gt;`, and `scope=&quot;col&quot;` - screen readers
             understand table structure
           </p>
+          <details className="mt-4 p-4 bg-green-50 border border-green-200 rounded">
+            <summary className="cursor-pointer font-semibold text-green-900">Why this is accessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Best practices:</strong></p>
+              <ul className="list-disc list-inside space-y-1 mb-3">
+                <li><code className="bg-gray-200 px-1 rounded">&lt;thead&gt;</code> separates headers from data rows</li>
+                <li><code className="bg-gray-200 px-1 rounded">&lt;th&gt;</code> marks header cells (not &lt;td&gt;)</li>
+                <li><code className="bg-gray-200 px-1 rounded">scope="col"</code> indicates column headers</li>
+                <li>Screen readers announce header context for each cell</li>
+              </ul>
+              <p className="mb-2"><strong>Accessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`<table>
+  <thead>
+    <tr>
+      <th scope="col">Product Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Availability</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Product A</td>
+      <td>$29.99</td>
+      <td>In Stock</td>
+    </tr>
+  </tbody>
+</table>`}</pre>
+              <p className="text-xs text-gray-600 mt-2">Screen reader: "Product Name: Product A, Price: $29.99, Availability: In Stock"</p>
+            </div>
+          </details>
         </section>
 
         <section className="mb-12">
@@ -371,6 +568,21 @@ export default function AccessiblePage() {
           <p className="text-sm text-gray-600">
             ✓ Enables proper text-to-speech language selection for multilingual content
           </p>
+          <details className="mt-4 p-4 bg-green-50 border border-green-200 rounded">
+            <summary className="cursor-pointer font-semibold text-green-900">Why this is accessible</summary>
+            <div className="mt-3 text-sm text-gray-700">
+              <p className="mb-2"><strong>Best practice:</strong> Declare language on html element</p>
+              <p className="mb-3">Screen readers use the language attribute to apply correct pronunciation rules, character encoding, and text-to-speech voice selection. This is essential for accessibility and SEO.</p>
+              <p className="mb-2"><strong>Accessible Code:</strong></p>
+              <pre className="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto">{`<!DOCTYPE html>
+<html lang="en">
+  <head>...</head>
+  <body>...</body>
+</html>`}</pre>
+              <p className="text-xs text-gray-600 mt-2">Screen reader: Uses English pronunciation rules, correct voice for English speech</p>
+              <p className="text-xs text-gray-600 mt-2">For mixed languages: Use <code className="bg-gray-200 px-1 rounded">lang="es"</code> on spans containing Spanish text</p>
+            </div>
+          </details>
         </section>
       </main>
 
