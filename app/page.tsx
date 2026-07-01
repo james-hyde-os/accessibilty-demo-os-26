@@ -1,10 +1,14 @@
 import Link from "next/link";
+import { MAIN_ID } from "./lib/constants";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-
-      <main className="flex-1 max-w-7xl mx-auto px-4 py-12 w-full">
+      <main
+        id={MAIN_ID}
+        tabIndex={-1}
+        className="flex-1 max-w-7xl mx-auto px-4 py-12 w-full"
+      >
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-4">Welcome</h2>
           <p className="text-lg text-gray-700 mb-6">
@@ -115,8 +119,10 @@ export default function Home() {
             Testing Accessibility
           </h3>
           <p className="text-gray-700 mb-4">
-            Testing accessibilty isnt hard and most of the tools you can use are free, or built into your browser and laptop.
-            Have a look at the list of tools that the we recommend for testing, based on the tools from the GOV UK accessibilty tools.
+            Testing accessibilty isnt hard and most of the tools you can use are
+            free, or built into your browser and laptop. Have a look at the list
+            of tools that the we recommend for testing, based on the tools from
+            the GOV UK accessibilty tools.
           </p>
           <div className="flex items-center gap-4 mb-4">
             <Link
@@ -135,56 +141,64 @@ export default function Home() {
             <li>WAVE Evaluator</li>
           </ul>
         </section>
-              <section className="bg-gray-100 p-6 rounded-lg border border-gray-300 mb-12 px-4">
-        <h3 className="text-lg font-bold mb-3 text-gray-900">
-          More materials
-        </h3>
-        <ul className="space-y-2 text-gray-700 mb-7">
-          <li>
-            <a
-              href="https://www.w3.org/WAI/WCAG22/quickref/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
-            >
-              WCAG 2.2 Quick Reference
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.w3.org/WAI/test-evaluate/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
-            >
-              W3C Accessibility Testing Tools
-            </a>
-          </li>
-          <li>
-            <a href="https://www.gov.uk/service-manual/helping-people-to-use-your-service/testing-for-accessibility" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-              GOV UK Testing for accessibility
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://accessibility.education.gov.uk/tools-testing/tools"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
-            >
-              GOV UK Accessibility Tools
-            </a>
-          </li>
-          <li>
-            <a href="https://www.w3.org/WAI/test-evaluate/tools/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-              Jest Axe
-            </a>
-          </li>
-        </ul>
-      </section>
+        <section className="bg-gray-100 p-6 rounded-lg border border-gray-300 mb-12 px-4">
+          <h3 className="text-lg font-bold mb-3 text-gray-900">
+            More materials
+          </h3>
+          <ul className="space-y-2 text-gray-700 mb-7">
+            <li>
+              <a
+                href="https://www.w3.org/WAI/WCAG22/quickref/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                WCAG 2.2 Quick Reference
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.w3.org/WAI/test-evaluate/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                W3C Accessibility Testing Tools
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.gov.uk/service-manual/helping-people-to-use-your-service/testing-for-accessibility"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                GOV UK Testing for accessibility
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://accessibility.education.gov.uk/tools-testing/tools"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                GOV UK Accessibility Tools
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.w3.org/WAI/test-evaluate/tools/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                Jest Axe
+              </a>
+            </li>
+          </ul>
+        </section>
       </main>
-
-
 
       <footer className="bg-gray-800 text-white mt-12">
         <div className="max-w-7xl mx-auto px-4 py-8">
