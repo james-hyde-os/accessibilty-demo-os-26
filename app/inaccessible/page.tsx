@@ -615,8 +615,6 @@ for services.`}</pre>
           </details>
         </section>
       </main>
-
-      <InaccessibleFooter />
     </div>
   );
 }

@@ -604,15 +604,6 @@ export default function QuizPageClient() {
           </div>
         </section>
       </main>
-
-      <footer className="bg-gray-800 text-white mt-12">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <p className="text-sm text-gray-300">
-            &copy; 2026 Accessibility Demo Site. Use this quiz to practice
-            spotting accessibility problems.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

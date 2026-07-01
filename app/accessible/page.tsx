@@ -810,8 +810,6 @@ We also offer
           </details>
         </section>
       </main>
-
-      <AccessibleFooter />
     </div>
   );
 }
