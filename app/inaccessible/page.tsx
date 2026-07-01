@@ -21,12 +21,12 @@ export default function InaccessiblePage() {
         <div className="text-4xl font-bold mb-6">Inaccessible Page</div>
 
         <section className="mb-12">
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-gray-700 mb-6 dark:text-gray-300">
             This page demonstrates common accessibility violations. It has been
             intentionally built without proper accessibility practices. This
             page contains the following issues:
           </p>
-          <ul className="text-gray-700 ml-4">
+          <ul className="text-gray-700 ml-4 dark:text-gray-300">
             <li>Missing image alt text</li>
             <li>Poor color contrast ratios</li>
             <li>Form inputs without proper labels</li>

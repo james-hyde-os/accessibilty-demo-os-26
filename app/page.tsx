@@ -11,19 +11,19 @@ export default function Home() {
       >
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-4">Welcome</h2>
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-gray-700 mb-6 dark:text-gray-300">
             This project demonstrates the difference between an accessible
             website built to WCAG 2.2 Level A standards and one with common
             accessibility violations.
           </p>
-          <p className="text-lg text-gray-700 mb-8">
+          <p className="text-lg text-gray-700 mb-8 dark:text-gray-300">
             Click on either link below to compare the two approaches.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <Link
               href="/accessible"
-              className="p-6 bg-green-50 border-2 border-green-500 rounded-lg hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+              className="p-6 bg-green-50 border-2 border-green-500 rounded-lg hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:bg-green-950/30 dark:border-green-700"
             >
               <h3 className="text-xl font-bold mb-2 text-green-700">
                 ✓ Accessible Page
@@ -44,7 +44,7 @@ export default function Home() {
 
             <Link
               href="/inaccessible"
-              className="p-6 bg-red-50 border-2 border-red-500 rounded-lg hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+              className="p-6 bg-red-50 border-2 border-red-500 rounded-lg hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:bg-red-950/30 dark:border-red-700"
             >
               <h3 className="text-xl font-bold mb-2 text-red-700">
                 ✗ Inaccessible Page
@@ -65,7 +65,7 @@ export default function Home() {
 
             <Link
               href="/quiz"
-              className="p-6 bg-yellow-50 border-2 border-yellow-500 rounded-lg hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
+              className="p-6 bg-yellow-50 border-2 border-yellow-500 rounded-lg hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 dark:bg-yellow-950/30 dark:border-yellow-700"
             >
               <h3 className="text-xl font-bold mb-2 text-yellow-700">
                 ? Accessibility Quiz
@@ -83,7 +83,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-blue-50 p-6 rounded-lg border border-blue-200 mb-12">
+        <section className="bg-blue-50 p-6 rounded-lg border border-blue-200 mb-12 dark:bg-blue-950/30 dark:border-blue-900">
           <h3 className="text-lg font-bold mb-3 text-blue-900">
             What You&lsquo;ll Find on Each Page
           </h3>
@@ -132,7 +132,7 @@ export default function Home() {
               Explore Testing Tools →
             </Link>
           </div>
-          <ul className="text-gray-700 space-y-1 list-disc pl-12">
+          <ul className="text-gray-700 space-y-1 list-disc pl-12 dark:text-gray-300">
             <li>Inspecting elements in developer tools</li>
             <li>Axe DevTools</li>
             <li>Contrast Checker</li>

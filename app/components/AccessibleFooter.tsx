@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function AccessibleFooter() {
   return (
-    <footer className="bg-gray-800 text-white mt-12">
+    <footer className="bg-gray-800 text-white mt-12 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 py-8">
         <nav aria-label="Footer navigation" className="mb-6">
           <ul className="flex flex-wrap gap-6">

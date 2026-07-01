@@ -18,7 +18,7 @@ export default function Header() {
   };
 
   return (
-    <header className="relative inline-flex justify-between bg-blue-600 text-white shadow-lg px-6 py-4">
+    <header className="relative inline-flex justify-between bg-blue-600 text-white shadow-lg px-6 py-4 dark:bg-blue-700">
       <a
         href={`#${MAIN_ID}`}
         onClick={handleSkipToContent}
@@ -52,7 +52,7 @@ const NavigationList = ({ paths }: NavigationProps) => {
         <NavMenu.Item key={pathObj.path}>
           <NavMenu.Link
             href={pathObj.path}
-            className="text-blue-800 hover:text-blue-400 lg:text-white"
+            className="text-blue-800 hover:text-blue-400 lg:text-white dark:text-blue-100 dark:hover:text-blue-300"
           >
             {pathObj.label}
           </NavMenu.Link>
@@ -98,7 +98,7 @@ const MobileNavigation = ({ paths }: NavigationProps) => {
         id="mobile-navigation-menu"
         aria-hidden={!isOpen}
         className={
-          "absolute w-64 right-0 bg-white shadow-lg px-1 py-2 border border-gray-300" +
+          "absolute w-64 right-0 bg-white text-gray-900 shadow-lg px-1 py-2 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-700" +
           (isOpen ? " block" : " hidden")
         }
       >

@@ -12,7 +12,10 @@ export default function AccessibleForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md">
+    <form
+      onSubmit={handleSubmit}
+      className="bg-white p-6 rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100"
+    >
       <h2 className="text-xl font-bold mb-4">Contact Form</h2>
 
       {submitted && (
@@ -33,7 +36,7 @@ export default function AccessibleForm() {
           id="name"
           type="text"
           required
-          className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border border-gray-300 rounded bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100"
           aria-describedby="name-help"
         />
         <p id="name-help" className="text-sm text-gray-600 mt-1">
@@ -49,7 +52,7 @@ export default function AccessibleForm() {
           id="email"
           type="email"
           required
-          className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border border-gray-300 rounded bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100"
           aria-describedby="email-help"
         />
         <p id="email-help" className="text-sm text-gray-600 mt-1">
@@ -65,7 +68,7 @@ export default function AccessibleForm() {
           id="message"
           required
           rows={5}
-          className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border border-gray-300 rounded bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100"
         ></textarea>
       </div>
 
@@ -75,7 +78,7 @@ export default function AccessibleForm() {
         </label>
         <select
           id="subject"
-          className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border border-gray-300 rounded bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100"
         >
           <option value="">Select a subject</option>
           <option value="inquiry">General Inquiry</option>

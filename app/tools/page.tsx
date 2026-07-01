@@ -222,7 +222,7 @@ export default function ToolsPage() {
           <h2 className="text-2xl font-bold mb-4">
             Tools for Testing Accessibility
           </h2>
-          <p className="text-lg text-gray-700 mb-8">
+          <p className="text-lg text-gray-700 mb-8 dark:text-gray-300">
             Click on any tool below to learn more about it, including
             documentation links and basic instructions on how to use it for
             accessibility testing.
@@ -237,9 +237,9 @@ export default function ToolsPage() {
               <Accordion.Item
                 key={tool.id}
                 value={tool.id}
-                className="border border-gray-300 rounded-lg"
+                className="border border-gray-300 rounded-lg dark:border-gray-700"
               >
-                <Accordion.Trigger className="flex items-center justify-between w-full px-6 py-4 text-left font-semibold text-lg bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset transition-colors">
+                <Accordion.Trigger className="flex items-center justify-between w-full px-6 py-4 text-left font-semibold text-lg bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset transition-colors dark:bg-gray-800 dark:hover:bg-gray-700">
                   <span className="text-gray-900">{tool.title}</span>
                   <ChevronDownIcon
                     className="w-5 h-5 text-gray-600 transition-transform duration-200 data-[state=open]:rotate-180"
@@ -247,13 +247,15 @@ export default function ToolsPage() {
                   />
                 </Accordion.Trigger>
 
-                <Accordion.Content className="px-6 py-4 bg-white">
+                <Accordion.Content className="px-6 py-4 bg-white dark:bg-gray-900">
                   <div className="space-y-4">
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-2">
                         What is it?
                       </h3>
-                      <p className="text-gray-700">{tool.explanation}</p>
+                      <p className="text-gray-700 dark:text-gray-300">
+                        {tool.explanation}
+                      </p>
                     </div>
 
                     {tool.documentation && (

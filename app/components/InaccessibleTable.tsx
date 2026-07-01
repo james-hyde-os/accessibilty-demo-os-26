@@ -1,59 +1,65 @@
 export default function InaccessibleTable() {
   return (
     <div className="overflow-x-auto">
-      <table style={{ width: "100%", borderCollapse: "collapse" }}>
-        <thead style={{ backgroundColor: "#ccc" }}>
+      <table className="w-full border-collapse border border-gray-300 dark:border-gray-700">
+        <thead className="bg-gray-200 dark:bg-gray-700">
           <tr>
-            <th style={{ border: "1px solid #ddd", padding: "8px" }}>
+            <th className="border border-gray-300 px-4 py-2 text-left dark:border-gray-700">
               Product Name
             </th>
-            <th style={{ border: "1px solid #ddd", padding: "8px" }}>
+            <th className="border border-gray-300 px-4 py-2 text-left dark:border-gray-700">
               Description
             </th>
-            <th style={{ border: "1px solid #ddd", padding: "8px" }}>
+            <th className="border border-gray-300 px-4 py-2 text-left dark:border-gray-700">
               Price
             </th>
-            <th style={{ border: "1px solid #ddd", padding: "8px" }}>
+            <th className="border border-gray-300 px-4 py-2 text-left dark:border-gray-700">
               In Stock
             </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+            <td className="border border-gray-300 px-4 py-2 dark:border-gray-700">
               Widget A
             </td>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+            <td className="border border-gray-300 px-4 py-2 dark:border-gray-700">
               High-quality widget
             </td>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+            <td className="border border-gray-300 px-4 py-2 dark:border-gray-700">
               $19.99
             </td>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>Yes</td>
+            <td className="border border-gray-300 px-4 py-2 dark:border-gray-700">
+              Yes
+            </td>
           </tr>
           <tr>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+            <td className="border border-gray-300 px-4 py-2 dark:border-gray-700">
               Widget B
             </td>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+            <td className="border border-gray-300 px-4 py-2 dark:border-gray-700">
               Premium widget
             </td>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+            <td className="border border-gray-300 px-4 py-2 dark:border-gray-700">
               $49.99
             </td>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>Yes</td>
+            <td className="border border-gray-300 px-4 py-2 dark:border-gray-700">
+              Yes
+            </td>
           </tr>
           <tr>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+            <td className="border border-gray-300 px-4 py-2 dark:border-gray-700">
               Widget C
             </td>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+            <td className="border border-gray-300 px-4 py-2 dark:border-gray-700">
               Professional widget
             </td>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+            <td className="border border-gray-300 px-4 py-2 dark:border-gray-700">
               $99.99
             </td>
-            <td style={{ border: "1px solid #ddd", padding: "8px" }}>No</td>
+            <td className="border border-gray-300 px-4 py-2 dark:border-gray-700">
+              No
+            </td>
           </tr>
         </tbody>
       </table>

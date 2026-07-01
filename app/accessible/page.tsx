@@ -23,12 +23,12 @@ export default function AccessiblePage() {
         </h1>
 
         <section className="mb-12">
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-gray-700 mb-6 dark:text-gray-300">
             Welcome to the accessible version of this demo website. This page is
             built with accessibility in mind and follows WCAG 2.2 Level A
             standards. Key accessibility features include:
           </p>
-          <ul className="list-disc list-inside space-y-2 text-gray-700">
+          <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
             <li>Semantic HTML structure with proper heading hierarchy</li>
             <li>Descriptive alt text for all images</li>
             <li>Properly labeled form inputs with helpful descriptions</li>
@@ -64,7 +64,7 @@ export default function AccessiblePage() {
               priority
             />
           </div>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
             Figure: A blue placeholder image with white text representing proper
             image accessibility.
           </p>
@@ -113,7 +113,7 @@ export default function AccessiblePage() {
 
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-4">Skip to Main Content</h2>
-          <p className="text-gray-700 mb-4">
+          <p className="text-gray-700 mb-4 dark:text-gray-300">
             This page includes a skip link at the top (try pressing Tab first)
             to bypass navigation and jump directly to main content.
           </p>

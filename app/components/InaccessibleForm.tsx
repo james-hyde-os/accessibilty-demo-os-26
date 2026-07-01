@@ -12,7 +12,10 @@ export default function InaccessibleForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md">
+    <form
+      onSubmit={handleSubmit}
+      className="bg-white p-6 rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100"
+    >
       <div className="text-xl font-bold mb-4">Contact Form</div>
 
       {submitted && (
@@ -28,7 +31,7 @@ export default function InaccessibleForm() {
         <input
           type="text"
           required
-          className="w-full px-3 py-2 border border-gray-300 rounded"
+          className="w-full px-3 py-2 border border-gray-300 rounded bg-white text-gray-900 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100"
         />
       </div>
 
@@ -39,7 +42,7 @@ export default function InaccessibleForm() {
         <input
           type="email"
           required
-          className="w-full px-3 py-2 border border-gray-300 rounded"
+          className="w-full px-3 py-2 border border-gray-300 rounded bg-white text-gray-900 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100"
         />
       </div>
 
@@ -50,13 +53,13 @@ export default function InaccessibleForm() {
         <textarea
           required
           rows={5}
-          className="w-full px-3 py-2 border border-gray-300 rounded"
+          className="w-full px-3 py-2 border border-gray-300 rounded bg-white text-gray-900 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100"
         ></textarea>
       </div>
 
       <div className="mb-4">
         <div className="block text-sm font-medium mb-1">Subject</div>
-        <select className="w-full px-3 py-2 border border-gray-300 rounded">
+        <select className="w-full px-3 py-2 border border-gray-300 rounded bg-white text-gray-900 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100">
           <option value="">Select a subject</option>
           <option value="inquiry">General Inquiry</option>
           <option value="support">Support</option>

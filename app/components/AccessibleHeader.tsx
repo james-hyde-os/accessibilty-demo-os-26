@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function AccessibleHeader() {
   return (
-    <header className="bg-blue-600 text-white shadow-lg">
+    <header className="bg-blue-600 text-white shadow-lg dark:bg-blue-700">
       <div className="max-w-7xl mx-auto px-4 py-6">
         <h1 className="text-3xl font-bold mb-4">Accessibility Demo Site</h1>
         <nav aria-label="Main navigation">

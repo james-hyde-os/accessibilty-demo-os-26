@@ -186,7 +186,7 @@ export default function QuizPageClient() {
       >
         <div
           id="quiz-top"
-          className="bg-yellow-100 text-yellow-900 border border-yellow-300 rounded-lg mb-12"
+          className="bg-yellow-100 text-yellow-900 border border-yellow-300 rounded-lg mb-12 dark:bg-yellow-950/40 dark:text-yellow-100 dark:border-yellow-800"
         >
           <div className="max-w-7xl mx-auto px-4 py-6">
             <h1 className="text-3xl font-bold mb-3">Accessibility Quiz</h1>
@@ -195,7 +195,7 @@ export default function QuizPageClient() {
               in the inaccessible example. Use the tools page to inspect the
               page and then name as many problems as you can.
             </p>
-            <p className="text-gray-800">
+            <p className="text-gray-800 dark:text-gray-200">
               <Link
                 href="/tools"
                 className="font-semibold underline hover:text-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-900 focus:ring-offset-2"
@@ -214,7 +214,7 @@ export default function QuizPageClient() {
             itself does not label them for you. Use the examples and your own
             observations to enter the accessibility issue you think is present.
           </p>
-          <p className="text-gray-700 mb-6">
+          <p className="text-gray-700 mb-6 dark:text-gray-300">
             Enter one issue per line and click <strong>Submit answers</strong>{" "}
             to get scored. Try to identify as many of the following as you can:
           </p>
@@ -253,9 +253,9 @@ export default function QuizPageClient() {
           </form>
 
           {submitted && (
-            <div className="mt-8 rounded-lg border border-blue-200 bg-blue-50 p-6">
+            <div className="mt-8 rounded-lg border border-blue-200 bg-blue-50 p-6 dark:border-blue-900 dark:bg-blue-950/30">
               <h3 className="text-xl font-bold mb-3">Quiz results</h3>
-              <p className="text-gray-800 mb-3">
+              <p className="text-gray-800 mb-3 dark:text-gray-200">
                 You correctly identified <strong>{score}</strong> of{" "}
                 <strong>{expectedIssues.length}</strong> expected issues.
               </p>
